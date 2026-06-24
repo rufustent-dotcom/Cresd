@@ -12,17 +12,17 @@ websites = [
 def check_websites(website_list):
     status_dict = {}
 
-    for item in website_list:
-        website = item.strip()
+    for website in website_list:
         try:
             status = requests.get(website, timeout=5).status_code
-            status_dict[website] = "UP" if status == 200 else "DOWN"
+            status_dict[website] = "UP" if 200 <= status < 300 else "DOWN"
         except requests.exceptions.RequestException:
             status_dict[website] = "ERROR"
 
     print("Website Status")
     print()
-    print(status_dict)
+    for website, status in status_dict.items():
+        print(f"{website} {status}")
     return status_dict
 
 
