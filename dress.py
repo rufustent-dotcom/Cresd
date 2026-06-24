@@ -9,10 +9,10 @@ websites = [
 ]
 
 
-def check_websites(websites):
+def check_websites(website_list):
     status_dict = {}
 
-    for item in websites:
+    for item in website_list:
         website = item.strip()
         try:
             status = requests.get(website, timeout=5).status_code
@@ -20,7 +20,7 @@ def check_websites(websites):
         except requests.exceptions.RequestException:
             status_dict[website] = "ERROR"
 
-    print({"Website": "Status"})
+    print("Website Status")
     print()
     print(status_dict)
     return status_dict
