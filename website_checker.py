@@ -19,12 +19,16 @@ def check_websites(website_list):
         except requests.exceptions.RequestException:
             status_dict[website] = "ERROR"
 
-    print("Website Status")
-    print()
-    for website, status in status_dict.items():
-        print(f"{website} {status}")
     return status_dict
 
 
+def display_statuses(status_dict):
+    print("Website Status")
+    print("--------------")
+    print()
+    for website, status in status_dict.items():
+        print(f"{website} {status}")
+
+
 if __name__ == "__main__":
-    check_websites(websites)
+    display_statuses(check_websites(websites))
