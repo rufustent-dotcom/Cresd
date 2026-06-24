@@ -27,7 +27,7 @@ def display_statuses(status_dict):
     print("--------------")
     print()
     for website, status in status_dict.items():
-        print(f"{website} {status}")
+        print(f"{website}: {status}")
 
 
 if __name__ == "__main__":
