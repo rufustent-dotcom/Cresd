@@ -1,2 +1,3 @@
 # Cresd
-Description
+
+Website status checker using Python and `requests`.
