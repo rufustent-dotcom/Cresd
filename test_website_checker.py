@@ -56,6 +56,19 @@ class DisplayStatusesTests(unittest.TestCase):
             "https://example.org: ERROR\n",
         )
 
+    def test_displays_header_for_empty_statuses(self):
+        output = io.StringIO()
+
+        with redirect_stdout(output):
+            display_statuses({})
+
+        self.assertEqual(
+            output.getvalue(),
+            "Website Status\n"
+            "--------------\n"
+            "\n",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
