@@ -1,0 +1,6 @@
+{
+  "name": "Cresd",
+  "description": "Website status checker using Python and requests (Migrated to Node.js / React).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
